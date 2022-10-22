@@ -9,35 +9,38 @@ const minions = [
     "phil",
     "carl",
   ]
+// forEach to check who's present
 
-//   minions.forEach(name => console.log("I'm here!"));
+const present = arr => {
+    arr.forEach(element => {
+        console.log(`${element} - here`)
+    })
+  }
 
-  const capitalizedMinions = minions.map(name => {
-      if(name != "kevin"){
-          return name.charAt(0).toUpperCase() + name.slice(1)
-      } else {
-          return "kevin"
-      }
+  present(minions)
+ // map
+
+ // capitalize each minion's name EXCEPT kevin's
+  const capitalizedMinions = []
+   minions.map((element, index) => {
+          if(element === "kevin") {
+            capitalizedMinions.push(element)
+          } else {
+            capitalizedMinions.push(element.charAt(0).toUpperCase() + element.slice(1) )
+          } 
   })
 
+  // console.log(capitalizedMinions)
 
+  //  filter out minions that are not capitalized and save the correctly capitalized minions to an array 
 
-const actuallyCapitalizedMinions = capitalizedMinions.filter(name => {
-    if (name !== name.charAt(0).toUpperCase() + name.slice(1)){
-    } else {return name}
- })
- console.log(actuallyCapitalizedMinions)
+  const actuallyCapitalizedMinions =  capitalizedMinions.filter((element, index) => {    
+         return  element.charAt(0) === element.charAt(0).toUpperCase()       
+  })
 
- const testingMinions = actuallyCapitalizedMinions.every((name) => {
-    return name === name.charAt(0).toUpperCase() + name.slice(1)
- })
+// console.log(actuallyCapitalizedMinions)
 
-//  console.log(testingMinions)
-// console.log(capitalizedMinions)
-
-const isCapitalized = (minion) => {
-  return minion.charAt(0).toUpperCase() + minion.slice(1) === minion;
-}
-
-// console.log(capitalizedMinions.every(isCapitalized));
- console.log(capitalizedMinions.find(isCapitalized));
+//  check if they're all capitalized now
+const isEveryMinionUpperC = actuallyCapitalizedMinions.every((element, index) => {
+  return  element.charAt(0) === element.charAt(0).toUpperCase()
+})
