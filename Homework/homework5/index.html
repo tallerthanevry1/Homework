@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--Link to JavaScript-->
+    <script src="app.js" defer></script>
+    <title>Weather App</title>
+    <!-- Added CSS Sheet Here-->
+    <link rel="stylesheet" href="styles.css">
+    <!--JavaScript Libary-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <main>
+        <h1> Weather App</h1>  
+        <input type="text" class="inputValue" placeholder="Enter City" onkeyup="getinputvalue(this)">
+        <button class="search-btn">Search City</button>
+        <div class="container">
+            <div class="weatherDescription">
+                <p>City: <span class="city"></span></p>
+                <p>Tempature: <span class="temp"></span> &#8451<p>
+                <p>Humidity: <span class="humidity"></span>%</p>
+                <p>Weather: <span class="weather"></span></p>
+            </div>
+        </div>
+    
+</body>
+
+<footer>
+    Brendan Doherty @ General Assembly 2022.
+</footer>
+</html>
